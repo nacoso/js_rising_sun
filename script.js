@@ -10,7 +10,11 @@ function getWeatherData() {
 
   const sunrise = (data.sys.sunrise);
   const sunset = (data.sys.sunset);
-  const current_time = new Date().getTime()/1000;
+  const currentTime = new Date().getTime()/1000;
+  const timeSinceSunrise = currentTime - sunrise;
+  const noonTime = sunrise + ((sunset - sunrise) / 2);
+  console.log(noonTime);
+
 }
 
 const getWeather = new XMLHttpRequest();
