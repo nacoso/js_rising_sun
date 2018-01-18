@@ -5,7 +5,12 @@ window.addEventListener('load', function(){
 });
 
 function getWeatherData() {
-  console.log(this.responseText);
+  const data = JSON.parse(this.responseText);
+  console.dir(data);
+
+  const sunrise = (data.sys.sunrise);
+  const sunset = (data.sys.sunset);
+  const current_time = new Date().getTime()/1000;
 }
 
 const getWeather = new XMLHttpRequest();
